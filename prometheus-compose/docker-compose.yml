@@ -15,7 +15,7 @@ services:
       - prometheus
     image: grafana/grafana:latest
     ports:
-      - 127.0.0.1:3000:3000
+      - 3000:3000
     volumes:
       - grafana_data:/var/lib/grafana
   grafana_init:
@@ -26,5 +26,5 @@ services:
     volumes:
       - ./init.sh:/opt/init.sh
   coinmarketcap-exporter:
-    image: bcawthra/coinmarketcap-exporter:latest
+    image: szukalski/coinmarketcap-exporter:latest
 

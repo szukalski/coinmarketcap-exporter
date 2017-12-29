@@ -17,7 +17,7 @@ log.addHandler(ch)
 
 class CoinCollector():
   def __init__(self):
-    self.endpoint = 'https://api.coinmarketcap.com/v1/ticker/'
+    self.endpoint = 'https://api.coinmarketcap.com/v1/ticker/?convert=EUR&limit=300'
 
   def collect(self):
     # query the api
@@ -32,7 +32,7 @@ class CoinCollector():
     yield metric
     metric = Metric('coin_market', 'coinmarketcap metric values', 'gauge')
     for each in response:
-      for that in ['rank', 'price_usd', 'price_btc', '24h_volume_usd', 'market_cap_usd', 'available_supply', 'total_supply', 'percent_change_1h', 'percent_change_24h', 'percent_change_7d']:
+      for that in ['rank', 'price_usd', 'price_btc', '24h_volume_usd', 'market_cap_usd', 'available_supply', 'total_supply', 'percent_change_1h', 'percent_change_24h', 'percent_change_7d', 'price_eur', '24h_volume_eur', 'market_cap_eur']:
         coinmarketmetric = '_'.join(['coin_market', that])
         if each[that] is not None:
           metric.add_sample(coinmarketmetric, value=float(each[that]), labels={'id': each['id'], 'name': each['name'], 'symbol': each['symbol']})

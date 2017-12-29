@@ -1,5 +1,8 @@
 # coinmarketcap-exporter
 
+Stolen from <https://github.com/bonovoxly/coinmarketcap-exporter>. All credit there.
+I just added the EUR values to the scraper.
+
 A prometheus exporter for <https://coinmarketcap.com/>. Provides Prometheus metrics from the API endpoint of Coinmarketcap, such as US price, Bitcoin price, trading volume, etc. [Blog post found here](http://blog.billyc.io/2017/12/02/a-prometheus-exporter-for-cryptocurrency-values-using-the-coinmarketcap-api/).
 
 When running this exporter with both Prometheus and Grafana, [you can create dashboards like](https://grafana.com/dashboards/3890):
@@ -57,6 +60,4 @@ docker-compose up
 
 If you find this useful and want to contribute:
 
-- BTC: `161a2z4A5J5ndVyytBXroN8hGcf6Cc8RA5`
-- Ethereum: `0x9de200ba61af4a58c9fced2c1334110087a75f51`
-- Litecoin: `LMGHysobMGv9dWUg1s6CDYP78HSasX8gTp`
+- BTC: `1C4aooXtb45WwmouPiLENDJp4FWn8cfabG`

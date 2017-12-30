@@ -10,6 +10,7 @@ services:
       - prometheus_data:/prometheus
     ports:
       - 9090:9090
+    restart: always
   grafana:
     depends_on:
       - prometheus
@@ -18,6 +19,7 @@ services:
       - 3000:3000
     volumes:
       - grafana_data:/var/lib/grafana
+    restart: always
   grafana_init:
     entrypoint: "/opt/init.sh"
     depends_on:
@@ -25,7 +27,7 @@ services:
     image: grafana/grafana:latest
     volumes:
       - ./init.sh:/opt/init.sh
+    restart: always
   coinmarketcap-exporter:
     image: szukalski/coinmarketcap-exporter:latest
-
-restart: always
+    restart: always

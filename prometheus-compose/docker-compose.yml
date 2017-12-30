@@ -28,3 +28,4 @@ services:
   coinmarketcap-exporter:
     image: szukalski/coinmarketcap-exporter:latest
 
+restart: always
